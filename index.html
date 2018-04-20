@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	<meta http-equiv="refresh" content="600; url=https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+	<!--<meta http-equiv="refresh" content="600; url=https://www.youtube.com/watch?v=dQw4w9WgXcQ">-->
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -47,8 +47,8 @@
             <h1 style="text-align: center">About</h1>
             <br>
             <div style="display: block">
-                <img data-toggle="tooltip" data-placement="right" title="This is the profile picture that I use on the internet" src="photo.jpg" class="rounded-circle" width="200" style="float:left; display: block; margin-left: 25px;" alt="Profile pic">
-                <p style="margin-left: 275px; font-size:20px">My name is <span data-toggle="tooltip" data-placement="right" title="This spelled backwards is Kihtrak Raknas!"><em>Karthik Sankar</em></span>. At the time of writing this I am a sophomore at South Brunswick High School. <br>I'm co-head of Programming and the 1st Driver on 750R. In additon I'm a Curriculum Team Member. <br>I enjoy running, coding and messing with stuff in general.</p>
+                <img data-toggle="tooltip" data-placement="right" title="This is the profile picture that I use on the internet" src="photo.jpg" class="rounded-circle" width="250" style="float:left; display: block; margin-left: 25px;" alt="Profile pic">
+                <p style="margin-left: 300px; font-size:30px">My name is <span data-toggle="tooltip" data-placement="right" title="This spelled backwards is Kihtrak Raknas!"><em>Karthik Sankar</em></span>. At the time of writing this I am a sophomore at South Brunswick High School. I'm co-head of Programming and the 1st Driver on 750R. In additon I'm a Curriculum Team Member. I enjoy running, coding and messing with stuff in general.</p>
             </div>
         </div>
             <br>
@@ -60,16 +60,17 @@
         <div id="Projects">
             <br>
             <br>
+            
             <div  class="alert alert-info alert-dismissible" style="display:none" id="ClickAButton" data-toggle="tooltip" data-placement="top" title="Click to dismiss">
                 <strong>Click</strong> one of the tabs to veiw information about the project
             </div>
 
                   <ul class="nav nav-tabs nav-justified">
                     <li class="nav-item">
-                        <a class="nav-link" id = "tab1"><Strong>Active</Strong></a>
+                        <a class="nav-link" id = "tab1"><Strong>File Retrieval</Strong></a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" id = "tab2"><Strong>Link</Strong></a>
+                      <a class="nav-link" id = "tab2"><Strong>encodeMove</Strong></a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" id = "tab3"><Strong>Link</Strong></a>
@@ -78,21 +79,39 @@
                         <a class="nav-link" id = "tab4"><Strong>YES</Strong></a>
                     </li>
                   </ul>
-                <div class = "content" id=content1>
+            
+                <div class = "content container" id="content1">
+                    <h2 style="text-align: center">File Retrieval</h2>
+                    <br>
+                    <img style="float:left" src="./codeImgs/files.PNG">
+                    <p>&emsp;In the process of developing an auton recorder, a need for a programming cable rose. Not only to debug the code by also so send recorded data back the computer. The following is a work around for the lack of a programming cable. <br><br>&emsp;An important niche detail about PROS is that when the cortex is unplugged from a controller or computer and then reinseted, the code runs from the beggining as if it was just power cycled but the files on the cortex stay. A key detail to remember is that the files are still stored in RAM which means <em>they will disapear if you powercycle</em>. <br><br>&emsp;Using this key detail, it is posible to write debuging information to a file during normal opperation and extract it afterwards.</p>
+                    <br>
+                    <p><ins>Note: </ins><br>&emsp;In order to reseive the file data after plugging the cortex into the computer you need to open the PROS terminal.</p>
+                </div>
+                <div class = "content container" id="content2">
+                    <h2 style="text-align: center">encodeMove</h2>
+                    <br>
+                    <img style="float:left" src="./codeImgs/encodeMove.PNG">
+                    
+                    <p>&emsp;<br>&emsp;When building a super accurate auton recorder, being able to act off of record sencor data is vital. This function allows a motor and a corresponding motor to get to any inputed state. If using this in an auton recorder, simply call this function until the function returns 0. At this point move on to replicating the next sensor value. <br><br>&emsp;Building an auton recorder in the way also allows for more compact recorded data. This method only need a final state for any action made, compared to the traditional recording every change to the motor's speed.</p>
+                    <br>
+                    <p><ins>Note: </ins><br>&emsp;V5 motors have encoders build into them so fucntions like this one will be useful and add zero extra cost or bulk to the robot</p>
+                </div>
+                <div class = "content container" id="content3">
                     <h1>YAY</h1>
                 </div>
-                <div class = "content" id=content2>
-                    <h1>YAY</h1>
-                </div>
-                <div class = "content" id=content3>
-                    <h1>YAY</h1>
-                </div>
-                <div class = "content" id=content4>
+                <div class = "content container" id="content4">
                     <h1>YAY</h1>
                 </div>
         </div>
       <br>
         <br>
+        <div class=container>
+            <h1>QUICK SIGN IN</h1>
+            <br>
+            <p>=ARRAY_CONSTRAIN(ARRAYFORMULA( if(isblank(E2:E),if(ISBLANK(if(isna(MATCH(Meetings!A2:A,DATEVALUE(qa!A2:A),0)),, HLOOKUP( "HERE" ,qa!B2:B , MATCH(Meetings!A2:A,DATEVALUE(qa!A2:A),0), true))),IF(B2:B = "","",E2:E-D2:D),F2:F),E2:E-D2:D)),100,1)</p>
+            <br>
+        </div>
         <br>
         <br>
         <br>
@@ -155,18 +174,18 @@
 
                 var loop = setInterval(alive,100);
                 function alive(){
-                    firebase.database().ref("Eport/").update({
+                    firebase.database().ref("Kport/").update({
                         testval: (Math.random()*10000)
                     });
                 }
 
                 var audio = document.getElementById("audio");
                 var temp;
-                firebase.database().ref("/Kport").on("value", function(snap){
+                firebase.database().ref("/Eport").on("value", function(snap){
                     if(temp != null && temp!=snap.child("testval").val()){
                         console.log("PLAY");
                         audio.play();
-                        $("#volume").slideDown();
+                        $("#volume").slideDown().delay(10000).slideUp();
                     }
                     temp = snap.child("testval").val();
                 });

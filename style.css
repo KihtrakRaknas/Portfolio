@@ -34,4 +34,17 @@
             
 .content{
     display: none;
+    
+}
+
+.content p {
+    
+}
+
+.content h2 {
+    
+}
+
+#content1 p {
+    margin-left: 450px;
 }
