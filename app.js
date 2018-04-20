@@ -1,4 +1,4 @@
-var logo = document.getElementById("750 logo");
+var logo = document.getElementById("750Logo");
 var logoText = document.getElementById("logoText");
 var tab1 = document.getElementById("tab1");
 var tab2 = document.getElementById("tab2");
@@ -90,9 +90,7 @@ function resize(){
     height = (window.innerWidth*(243/686))
     logo.style= "min-height: "+height+"px;";
     var borderSize = ((window.innerWidth/2)-290).toString();
-    console.log(borderSize);
     var topBorderSize = (height-310)/2
-    console.log(topBorderSize);
     logoText.style="margin-left: "+borderSize+"px; margin-right: "+borderSize+"px; margin-top: "+topBorderSize+"px;";
     //logoText.style="";
 }

@@ -5,35 +5,40 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+	<meta http-equiv="refresh" content="600; url=https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
       <link rel="stylesheet" type="text/css" href="style.css">
-      
+
     <title>Hello, world!</title>
   </head>
     <body data-spy="scroll" data-target=".navbar" data-offset="50">
         
+        
         <!--<div  class = "parallax"></div>-->
         <!--<div  class="jumbotron "></div>-->
-      <div id = "750 logo" class="jumbotron text-center paral paralsec">
+      <div id = "750Logo" class="jumbotron text-center paral paralsec">
           <div id = "logoText" class="paralText">
               <h1><strong>Karthik Sankar</strong></h1>
             <i>750 Resistance</i>
           </div>
       </div>
-    
-        
-        
-        
-        
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top" style = "margin-top: 0px">
-      
+
+
+       <div id="volume" class="jumbotron" style="background-color: #ff9d00 !important; color: aqua; display:none">
+            <h1 style="text-align: center;">TERN ON DE VOLOOM</h1>
+        </div>
+
+
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top" style = "margin-top: 0px;">
+
       <a href="#" style="color:white;" class="nav-item"><em><strong>Karthik's Portfolio</strong></em></a>
         <ul class="navbar-nav ml-auto">
             <li class="nav-item"><a class="nav-link" href="#About">About</a></li>
             <li class="nav-item"><a class="nav-link" href="#Projects">Projects</a></li>
         </ul>
-            
+
     </nav>
 
         <div id="About">
@@ -42,9 +47,8 @@
             <h1 style="text-align: center">About</h1>
             <br>
             <div style="display: block">
-                <img data-toggle="tooltip" data-placement="right" title="This is the profile picture that I use on the internet" src="photo.jpg" class="rounded-circle" width="200" style="float:left; display: block; margin-left: 25px;" alt="Profile pic"> 
-            <!--display: block;margin-left: auto; margin-right: auto;-->
-            <p style="margin-left: 275px; font-size:20px">My name is <span data-toggle="tooltip" data-placement="right" title="This spelled backwards is Kihtrak Raknas!"><em>Karthik Sankar</em></span>. At the time of writing this I am a sophomore at South Brunswick High School. <br>I'm co-head of Programming and the 1st Driver on 750R. In additon I'm a Curriculum Team Member. <br>I enjoy running, coding and messing with stuff in general.</p>
+                <img data-toggle="tooltip" data-placement="right" title="This is the profile picture that I use on the internet" src="photo.jpg" class="rounded-circle" width="200" style="float:left; display: block; margin-left: 25px;" alt="Profile pic">
+                <p style="margin-left: 275px; font-size:20px">My name is <span data-toggle="tooltip" data-placement="right" title="This spelled backwards is Kihtrak Raknas!"><em>Karthik Sankar</em></span>. At the time of writing this I am a sophomore at South Brunswick High School. <br>I'm co-head of Programming and the 1st Driver on 750R. In additon I'm a Curriculum Team Member. <br>I enjoy running, coding and messing with stuff in general.</p>
             </div>
         </div>
             <br>
@@ -138,11 +142,39 @@
         <br>
         <br>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+		<audio id ="audio" controls="controls" loop style="display: none;">
+		    <source src="something.mp3" type="audio/mpeg">
+		</audio>
+
+        
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+            <script>
+                firebase.initializeApp({apiKey: "AIzaSyAjgdd8Bc-yxC4Ors8t76ZYXsavQABh5I4",authDomain: "rick-roller.firebaseapp.com",databaseURL: "https://rick-roller.firebaseio.com",projectId: "rick-roller",storageBucket: "",messagingSenderId: "288023573199"});
+
+                var loop = setInterval(alive,100);
+                function alive(){
+                    firebase.database().ref("Eport/").update({
+                        testval: (Math.random()*10000)
+                    });
+                }
+
+                var audio = document.getElementById("audio");
+                var temp;
+                firebase.database().ref("/Kport").on("value", function(snap){
+                    if(temp != null && temp!=snap.child("testval").val()){
+                        console.log("PLAY");
+                        audio.play();
+                        $("#volume").slideDown();
+                    }
+                    temp = snap.child("testval").val();
+                });
+            </script>        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <script src="app.js"></script>
+
+
   </body>
 </html>
