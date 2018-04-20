@@ -7,24 +7,86 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="style.css">
+      <link rel="stylesheet" type="text/css" href="style.css">
       
     <title>Hello, world!</title>
   </head>
     <body data-spy="scroll" data-target=".navbar" data-offset="50">
-      <div class="jumbotron text-center">
-    <h1>Karthik Sankar</h1>
-      <i>A Robotics Portfolio</i>
-      </div>
         
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
+        <!--<div  class = "parallax"></div>-->
+        <!--<div  class="jumbotron "></div>-->
+      <div id = "750 logo" class="jumbotron text-center paral paralsec">
+          <div id = "logoText" class="paralText">
+              <h1><strong>Karthik Sankar</strong></h1>
+            <i>750 Resistance</i>
+          </div>
+      </div>
+    
+        
+        
+        
+        
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top" style = "margin-top: 0px">
       
-      <span style="color:white;" class="nav-item">TESTING</span>
+      <a href="#" style="color:white;" class="nav-item"><em><strong>Karthik's Portfolio</strong></em></a>
         <ul class="navbar-nav ml-auto">
-    <li class="nav-item"><a class="nav-link" href="#section1">TEST</a></li>
-      </ul>
+            <li class="nav-item"><a class="nav-link" href="#About">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#Projects">Projects</a></li>
+        </ul>
             
-      </nav>
+    </nav>
+
+        <div id="About">
+            <br>
+            <br>
+            <h1 style="text-align: center">About</h1>
+            <br>
+            <div style="display: block">
+                <img data-toggle="tooltip" data-placement="right" title="This is the profile picture that I use on the internet" src="photo.jpg" class="rounded-circle" width="200" style="float:left; display: block; margin-left: 25px;" alt="Profile pic"> 
+            <!--display: block;margin-left: auto; margin-right: auto;-->
+            <p style="margin-left: 275px; font-size:20px">My name is <span data-toggle="tooltip" data-placement="right" title="This spelled backwards is Kihtrak Raknas!"><em>Karthik Sankar</em></span>. At the time of writing this I am a sophomore at South Brunswick High School. <br>I'm co-head of Programming and the 1st Driver on 750R. In additon I'm a Curriculum Team Member. <br>I enjoy running, coding and messing with stuff in general.</p>
+            </div>
+        </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        <div id="Projects">
+            <br>
+            <br>
+            <div  class="alert alert-info alert-dismissible" style="display:none" id="ClickAButton" data-toggle="tooltip" data-placement="top" title="Click to dismiss">
+                <strong>Click</strong> one of the tabs to veiw information about the project
+            </div>
+
+                  <ul class="nav nav-tabs nav-justified">
+                    <li class="nav-item">
+                        <a class="nav-link" id = "tab1"><Strong>Active</Strong></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" id = "tab2"><Strong>Link</Strong></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" id = "tab3"><Strong>Link</Strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id = "tab4"><Strong>YES</Strong></a>
+                    </li>
+                  </ul>
+                <div class = "content" id=content1>
+                    <h1>YAY</h1>
+                </div>
+                <div class = "content" id=content2>
+                    <h1>YAY</h1>
+                </div>
+                <div class = "content" id=content3>
+                    <h1>YAY</h1>
+                </div>
+                <div class = "content" id=content4>
+                    <h1>YAY</h1>
+                </div>
+        </div>
       <br>
         <br>
         <br>
@@ -78,7 +140,7 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <script src="app.js"></script>
