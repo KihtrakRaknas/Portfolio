@@ -37,12 +37,15 @@
     
 }
 
+#content1{
+    display: block;
+}
+
 .content p {
     
 }
-
 .content h2 {
-    
+    text-align: center
 }
 
 #content1 p {
